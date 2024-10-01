@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart'; // นำเข้า Firebase Auth
 
 class SecurityPage extends StatefulWidget {
+  const SecurityPage({super.key});
+
   @override
   _SecurityPageState createState() => _SecurityPageState();
 }
@@ -42,7 +44,7 @@ class _SecurityPageState extends State<SecurityPage> {
         // เปลี่ยนรหัสผ่าน
         await user.updatePassword(newPassword);
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('เปลี่ยนรหัสผ่านสำเร็จ!')),
+          const SnackBar(content: Text('เปลี่ยนรหัสผ่านสำเร็จ!')),
         );
 
         // ล้างข้อมูล
@@ -62,11 +64,11 @@ class _SecurityPageState extends State<SecurityPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('ข้อผิดพลาด'),
+          title: const Text('ข้อผิดพลาด'),
           content: Text(message),
           actions: <Widget>[
             TextButton(
-              child: Text('ตกลง'),
+              child: const Text('ตกลง'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -81,7 +83,7 @@ class _SecurityPageState extends State<SecurityPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ความปลอดภัย'),
+        title: const Text('ความปลอดภัย'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -90,23 +92,23 @@ class _SecurityPageState extends State<SecurityPage> {
           children: [
             TextField(
               controller: _oldPasswordController,
-              decoration: InputDecoration(labelText: 'รหัสผ่านเก่า'),
+              decoration: const InputDecoration(labelText: 'รหัสผ่านเก่า'),
               obscureText: true,
             ),
             TextField(
               controller: _newPasswordController,
-              decoration: InputDecoration(labelText: 'รหัสผ่านใหม่'),
+              decoration: const InputDecoration(labelText: 'รหัสผ่านใหม่'),
               obscureText: true,
             ),
             TextField(
               controller: _confirmPasswordController,
-              decoration: InputDecoration(labelText: 'ยืนยันรหัสผ่านใหม่'),
+              decoration: const InputDecoration(labelText: 'ยืนยันรหัสผ่านใหม่'),
               obscureText: true,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _changePassword,
-              child: Text('เปลี่ยนรหัสผ่าน'),
+              child: const Text('เปลี่ยนรหัสผ่าน'),
             ),
           ],
         ),

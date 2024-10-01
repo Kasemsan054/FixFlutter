@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
       // เปลี่ยนไปยังหน้าโฮม
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
     } catch (e) {
       print("Error: $e");
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                 // นำไปสู่หน้าสร้างบัญชี
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignUpPage()),
+                  MaterialPageRoute(builder: (context) => const SignUpPage()),
                 );
               },
               child: const Text('ยังไม่มีบัญชี? สร้างบัญชีใหม่'),
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                  MaterialPageRoute(builder: (context) => const ForgotPasswordPage()),
                 );
               },
               child: const Text('ลืมรหัสผ่าน?'),

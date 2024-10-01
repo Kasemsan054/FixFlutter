@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
+  const ForgotPasswordPage({super.key});
+
   @override
   _ForgotPasswordPageState createState() => _ForgotPasswordPageState();
 }
@@ -15,7 +17,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       await _auth.sendPasswordResetEmail(email: _emailController.text.trim());
       // แสดงข้อความสำเร็จ
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("ลิงก์รีเซ็ตรหัสผ่านถูกส่งไปที่อีเมลของคุณ")),
+        const SnackBar(content: Text("ลิงก์รีเซ็ตรหัสผ่านถูกส่งไปที่อีเมลของคุณ")),
       );
       
       // นำกลับไปยังหน้าเข้าสู่ระบบ
@@ -33,7 +35,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ลืมรหัสผ่าน'),
+        title: const Text('ลืมรหัสผ่าน'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -42,13 +44,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           children: [
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(labelText: 'กรุณาใส่อีเมลของคุณ'),
+              decoration: const InputDecoration(labelText: 'กรุณาใส่อีเมลของคุณ'),
               keyboardType: TextInputType.emailAddress,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _resetPassword,
-              child: Text('ส่งลิงก์รีเซ็ตรหัสผ่าน'),
+              child: const Text('ส่งลิงก์รีเซ็ตรหัสผ่าน'),
             ),
           ],
         ),

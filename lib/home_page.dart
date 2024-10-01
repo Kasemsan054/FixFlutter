@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tucksalon/%E0%B8%B4booking_page.dart';
+import 'package:tucksalon/booking_page.dart';
 import 'package:tucksalon/notifications_page.dart';
 import 'package:tucksalon/profile_page.dart';
 
@@ -15,9 +15,9 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _pages = [
     const Center(child: Text('หน้าโฮม')),
-    BookingPage(),
-    NotificationsPage(),
-    ProfilePage(),
+    const BookingPage(),
+    const NotificationsPage(),
+    const ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('การจองคิว'),
-          content: BookingForm(),
+          content: const BookingForm(),
           actions: <Widget>[
             TextButton(
               child: const Text('ยกเลิก'),

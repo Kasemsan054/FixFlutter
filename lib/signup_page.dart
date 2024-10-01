@@ -37,7 +37,7 @@ class _SignUpPageState extends State<SignUpPage> {
       // นำทางไปหน้าหลัก
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
 
       print("Account created: ${userCredential.user?.email}");

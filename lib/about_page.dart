@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart'; // ต้องติดตั้ง package_info_plus
 
 class AboutPage extends StatelessWidget {
+  const AboutPage({super.key});
+
   Future<void> _showAppVersion(BuildContext context) async {
     // รับข้อมูลเวอร์ชันของแอป
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
@@ -11,11 +13,11 @@ class AboutPage extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('เวอร์ชันของแอป'),
+          title: const Text('เวอร์ชันของแอป'),
           content: Text('เวอร์ชัน: $version'),
           actions: <Widget>[
             TextButton(
-              child: Text('ตกลง'),
+              child: const Text('ตกลง'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -30,12 +32,12 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('เกี่ยวกับ'),
+        title: const Text('เกี่ยวกับ'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () => _showAppVersion(context),
-          child: Text('แสดงเวอร์ชันของแอป'),
+          child: const Text('แสดงเวอร์ชันของแอป'),
         ),
       ),
     );

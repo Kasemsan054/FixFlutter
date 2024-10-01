@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PersonalInfoPage extends StatefulWidget {
+  const PersonalInfoPage({super.key});
+
   @override
   _PersonalInfoPageState createState() => _PersonalInfoPageState();
 }
@@ -29,7 +31,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
 
     // แสดงข้อความยืนยัน
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('บันทึกข้อมูลสำเร็จ!')),
+      const SnackBar(content: Text('บันทึกข้อมูลสำเร็จ!')),
     );
   }
 
@@ -37,7 +39,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ข้อมูลส่วนตัว'),
+        title: const Text('ข้อมูลส่วนตัว'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -46,21 +48,21 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
           children: [
             TextField(
               controller: _firstNameController,
-              decoration: InputDecoration(labelText: 'ชื่อ'),
+              decoration: const InputDecoration(labelText: 'ชื่อ'),
             ),
             TextField(
               controller: _lastNameController,
-              decoration: InputDecoration(labelText: 'นามสกุล'),
+              decoration: const InputDecoration(labelText: 'นามสกุล'),
             ),
             TextField(
               controller: _phoneController,
-              decoration: InputDecoration(labelText: 'เบอร์โทร'),
+              decoration: const InputDecoration(labelText: 'เบอร์โทร'),
               keyboardType: TextInputType.phone,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _saveInfo,
-              child: Text('บันทึกข้อมูล'),
+              child: const Text('บันทึกข้อมูล'),
             ),
           ],
         ),
