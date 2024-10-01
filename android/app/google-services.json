@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "771656595113",
+    "project_id": "final-project-6448a",
+    "storage_bucket": "final-project-6448a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771656595113:android:3573ecb506b40736985bb8",
+        "android_client_info": {
+          "package_name": "com.example.tucksalon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoujmuuK2lBcO3jMiu3OCPeSfJtE3PAmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
